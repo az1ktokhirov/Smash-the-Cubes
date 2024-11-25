@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2c3f51">
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <title>SMASH</title>
+</head>
+<body>
+    <!-- Game canvas -->
+<canvas id="c"></canvas>
+
+<!-- Gameplay HUD -->
+<div class="hud">
+	<div class="hud__score">
+		<div class="score-lbl"></div>
+		<div class="cube-count-lbl"></div>
+	</div>
+	<div class="pause-btn"><div></div></div>
+	<div class="slowmo">
+		<div class="slowmo__bar"></div>
+	</div>
+</div>
+
+<!-- Menu System -->
+<div class="menus">
+	<div class="menu menu--main">
+		<h1>SMASH <br>the<br> CubeS </h1>
+		<button type="button" class="play-normal-btn">Играть</button>
+		<button type="button" class="play-casual-btn">Обычный режим</button>
+	</div>
+	<div class="menu menu--pause">
+		<h1>Пауза</h1>
+		<button type="button" class="resume-btn">Продолжать</button>
+		<button type="button" class="menu-btn--pause">Главное меню</button>
+	</div>
+	<div class="menu menu--score">
+		<h1>Игра окончена</h1>
+		<h2>Ваш результат:</h2>
+		<div class="final-score-lbl"></div>
+		<div class="high-score-lbl"></div>
+		<button type="button" class="play-again-btn">Играть заново</button>
+		<button type="button" class="menu-btn--score">Главное меню</button>
+	</div>
+	<div id="level-notification" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px; border-radius: 10px; z-index: 100;">
+		<p id="level-text">Новый уровень!</p>
+	</div>	
+</div>
+</body>
+</html>
