@@ -1864,23 +1864,9 @@ function tick(width, height, simTime, simSpeed, lag) {
 	PERF_END('shadows');
 
 	if (state.game.score >= 150 && state.game.score % 150 === 0) {
-        gameSpeed += 0.2; // Увеличиваем скорость игры на 20%
+        gameSpeed += 0.45; // Увеличиваем скорость игры на 20%
         showLevelNotification(`Скорость увеличена! Новый уровень скорости: ${gameSpeed.toFixed(1)}`);
     }
-
-	// Улучшения каждые 250 очков
-	if (state.game.score >= 250 && state.game.score % 250 === 0) {
-		spawnSpecialBonus(); // Добавляем специальный бонус
-		showLevelNotification('Добавлен специальный бонус!');
-	}
-
-	if (state.game.score >= 250 && state.game.score % 250 === 0) {
-		// Увеличиваем скорость объектов
-		targets.forEach(target => {
-			target.yD += 1; // Увеличиваем скорость падения на 1
-		});
-		showLevelNotification('Сложность увеличена: объекты движутся быстрее!');
-	}
 	
 
 	PERF_END('tick');
@@ -1895,7 +1881,7 @@ function showLevelNotification(text) {
     // Скрываем через 3 секунды
     setTimeout(() => {
         notification.style.display = 'none';
-    }, 3000);
+    }, 1400);
 }
 
 
