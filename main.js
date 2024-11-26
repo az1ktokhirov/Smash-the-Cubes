@@ -1864,7 +1864,7 @@ function tick(width, height, simTime, simSpeed, lag) {
 	PERF_END('shadows');
 
 	if (state.game.score >= 150 && state.game.score % 150 === 0) {
-        gameSpeed += 0.45; // Увеличиваем скорость игры на 20%
+        gameSpeed += 0.5; // Увеличиваем скорость игры на 20%
         showLevelNotification(`Скорость увеличена! Новый уровень скорости: ${gameSpeed.toFixed(1)}`);
     }
 	
