@@ -2216,3 +2216,41 @@ if ('PointerEvent' in window) {
 // ============================================================================
 
 setupCanvases();
+
+// New Audio Setup
+const backgroundMusic = document.getElementById("background-music");
+const bonusSound = document.getElementById("bonus-sound");
+backgroundMusic.volume = 0.5;
+
+// Start music on game start
+document.querySelector(".play-normal-btn").addEventListener("click", () => backgroundMusic.play());
+document.querySelector(".play-casual-btn").addEventListener("click", () => backgroundMusic.play());
+
+// Play bonus sound when a bonus is collected
+function playBonusSound() {
+    bonusSound.currentTime = 0;
+    bonusSound.play();
+}
+
+// New Achievement System
+const achievements = [];
+function unlockAchievement(name) {
+    if (!achievements.includes(name)) {
+        achievements.push(name);
+        const list = document.getElementById("achievements-list");
+        const item = document.createElement("li");
+        item.textContent = name;
+        list.appendChild(item);
+        document.getElementById("achievements-modal").style.display = "block";
+    }
+}
+
+// Trigger achievements
+setInterval(() => {
+    if (state.game.score >= 1000 && !achievements.includes("Score 1000 Points")) {
+        unlockAchievement("Score 1000 Points");
+    }
+    if (state.game.cubeCount >= 50 && !achievements.includes("Break 50 Cubes")) {
+        unlockAchievement("Break 50 Cubes");
+    }
+}, 1000);

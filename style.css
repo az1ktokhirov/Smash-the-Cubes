@@ -276,3 +276,25 @@ a {
 		opacity: 1;
 	}
 }
+
+/* Achievements Modal */
+#achievements-modal {
+    font-family: monospace;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Enhanced visuals for bonuses */
+.bonus {
+    animation: glow 1s infinite alternate;
+    color: gold;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px gold, 0 0 10px yellow;
+    }
+    to {
+        text-shadow: 0 0 10px gold, 0 0 20px yellow;
+    }
+}

@@ -50,5 +50,22 @@
 	</div>
 	
 </div>
-</body>
+
+    <!-- Audio elements -->
+    <audio id="background-music" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bonus-sound">
+        <source src="bonus-sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Achievements modal -->
+    <div id="achievements-modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.9); color: white; padding: 20px; border-radius: 10px;">
+        <h2>Achievements</h2>
+        <ul id="achievements-list"></ul>
+        <button onclick="document.getElementById('achievements-modal').style.display = 'none';">Close</button>
+    </div>
+
+    </body>
+    
 </html>
